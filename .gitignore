@@ -1,0 +1,42 @@
+# --- מערכת הפעלה ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Frontend (React / CRA) — מתיקיית `frontend/` ---
+frontend/node_modules/
+frontend/build/
+frontend/coverage/
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/.pnp
+frontend/.pnp.js
+
+# --- Backend (.NET) ---
+**/bin/
+**/obj/
+**/out/
+**/publish/
+**/*.user
+**/*.userosscache
+**/*.suo
+**/*.sln.docstates
+**/appsettings.*.local.json
+**/secrets.json
+
+# --- IDE ---
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.rsuser
+.vs/
+
+# --- סקריפטים זמניים ---
+*.log
+*.tmp
+*.temp
