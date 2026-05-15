@@ -54,6 +54,13 @@ final project/
 | ![קטגוריות](docs/screenshots/categories.png) | ![רשימת גמ״חים](docs/screenshots/list.png) |
 | ![אודות](docs/screenshots/about.png) | |
 
+הרשמה, התחברות ואזור אישי (משתמש מחובר):
+
+| התחברות | הרשמה |
+|:-------:|:-----:|
+| ![דף התחברות](docs/screenshots/login.png) | ![דף הרשמה](docs/screenshots/register.png) |
+| ![אזור אישי — הגמ״חים שלי](docs/screenshots/profile.png) | |
+
 ## מחרוזת חיבור וגיטהאב
 
 - **`appsettings.json`** תומך בחיבור מקומי עם **Trusted_Connection** (אימות Windows) — ללא סיסמת משתמש SQL בקובץ.
