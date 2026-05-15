@@ -61,6 +61,12 @@ final project/
 | ![דף התחברות](docs/screenshots/login.png) | ![דף הרשמה](docs/screenshots/register.png) |
 | ![אזור אישי — הגמ״חים שלי](docs/screenshots/profile.png) | |
 
+הוספת גמ״ח (משתמש מחובר):
+
+<p align="center">
+  <img src="docs/screenshots/addGmach.png" alt="טופס הוספת גמ״ח" width="920">
+</p>
+
 ## מחרוזת חיבור וגיטהאב
 
 - **`appsettings.json`** תומך בחיבור מקומי עם **Trusted_Connection** (אימות Windows) — ללא סיסמת משתמש SQL בקובץ.
