@@ -1,0 +1,261 @@
+/* --- רוחב אחיד עם תוכן הדף + צבע עדין --- */
+.homepage {
+  --layout-pad: min(5vw, 72px);
+  min-height: 100vh;
+  padding: 16px var(--layout-pad) 48px;
+  box-sizing: border-box;
+  background:
+    radial-gradient(ellipse 900px 380px at 50% -5%, rgba(99, 102, 241, 0.1), transparent 58%),
+    radial-gradient(ellipse 620px 300px at 100% 12%, rgba(14, 165, 233, 0.1), transparent 52%),
+    radial-gradient(ellipse 540px 280px at 0% 40%, rgba(236, 72, 153, 0.06), transparent 50%),
+    linear-gradient(180deg, #eef2ff 0%, #f8fafc 42%, #f1f5f9 100%);
+}
+
+.nav {
+  position: sticky;
+  top: 12px;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(12px, 3vw, 28px);
+  width: 100%;
+  max-width: none;
+  margin: 0 0 20px;
+  padding: 12px 18px 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.93));
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 0 0 1px rgba(37, 99, 235, 0.07),
+    0 14px 44px -14px rgba(15, 23, 42, 0.14);
+  backdrop-filter: blur(14px);
+  direction: rtl;
+  /* overflow:visible — כדי שלא ייגזרו תתי-תפריטים של Prime Menubar (כניסה → הרשמה/התחברות) */
+  overflow: visible;
+}
+
+.nav::after {
+  content: "";
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 0;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #6366f1, #2563eb, #06b6d4);
+  opacity: 0.88;
+  pointer-events: none;
+}
+
+.brand {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 10px;
+  border: 0;
+  background: transparent;
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background 0.15s ease;
+}
+
+.brand:hover {
+  background: linear-gradient(135deg, rgba(239, 246, 255, 0.95), rgba(238, 242, 255, 0.85));
+}
+
+.logoimage {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.nav-user-badge {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: min(200px, 36vw);
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(99, 102, 241, 0.28);
+  background: linear-gradient(135deg, rgba(238, 242, 255, 0.92), rgba(248, 250, 252, 0.95));
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.85) inset;
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+.nav-user-icon {
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  color: #0d9488;
+}
+
+.nav-user-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  color: #475569;
+}
+
+.nav-user-status-label {
+  flex-shrink: 0;
+  font-weight: 600;
+  color: #6366f1;
+}
+
+.nav-user-sep {
+  flex-shrink: 0;
+  opacity: 0.55;
+  font-weight: 700;
+  color: #94a3b8;
+}
+
+.nav-user-name {
+  font-weight: 600;
+  color: #0f172a;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+/* Prime Menubar: ניקוי ברירת מחדל */
+.nav .p-menubar {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border: none;
+  padding: 0;
+  background: transparent;
+  direction: rtl;
+  min-height: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.nav .p-menubar-start,
+.nav .p-menubar-end {
+  display: none;
+}
+
+.nav .p-menubar-root-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav .p-submenu-list {
+  margin-top: 8px;
+  padding: 6px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 16px 48px -12px rgba(15, 23, 42, 0.18);
+  direction: rtl;
+  z-index: 100;
+}
+
+.nav .p-menuitem-link {
+  border-radius: 10px;
+  padding: 10px 14px;
+  gap: 8px;
+  color: #334155;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  text-decoration: none !important;
+  border: none !important;
+  outline: none;
+  box-shadow: none !important;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.nav .p-menuitem-link .p-menuitem-text {
+  text-decoration: none !important;
+}
+
+.nav .p-menuitem-link .p-menuitem-icon {
+  color: #64748b;
+  font-size: 1rem;
+}
+
+.nav .p-menuitem-link:hover {
+  background: linear-gradient(135deg, rgba(239, 246, 255, 0.95), rgba(238, 242, 255, 0.75)) !important;
+  color: #0f172a !important;
+}
+
+.nav .p-menuitem-link:hover .p-menuitem-icon {
+  color: #4f46e5;
+}
+
+.nav .p-menuitem-link:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.nav .p-menuitem-active > .p-menuitem-link {
+  background: linear-gradient(135deg, #dbeafe, #e0e7ff) !important;
+  color: #1e40af !important;
+}
+
+.nav .p-menuitem-active > .p-menuitem-link .p-menuitem-icon {
+  color: #4f46e5;
+}
+
+/* קישורים בתוך התפריט — ללא קו תחתון */
+.nav a,
+.nav a:hover,
+.nav a:focus {
+  text-decoration: none !important;
+}
+
+@media (max-width: 760px) {
+  .nav {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 14px;
+    gap: 12px;
+  }
+
+  .brand {
+    justify-content: center;
+  }
+
+  .nav-user-badge {
+    justify-content: center;
+    max-width: none;
+    align-self: center;
+  }
+
+  .nav-user-meta {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .nav .p-menubar {
+    justify-content: center;
+  }
+
+  .nav .p-menubar-root-list {
+    justify-content: center;
+  }
+}
